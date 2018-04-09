@@ -35,6 +35,8 @@ public class RunCommandLine implements CommandLineRunner{
 
 //        db1Manager.updateDiffDbConditionWithCallback();
 //
+        commonManager.printPersonContent();
+
 //        log.info(" command info run");
     }
 

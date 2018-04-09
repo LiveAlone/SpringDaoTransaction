@@ -9,6 +9,7 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 import org.yqj.dao.demo.config.DB1Config;
 import org.yqj.dao.demo.db1.PersonDB1Mapper;
 import org.yqj.dao.demo.db2.PersonDB2Mapper;
+import org.yqj.dao.demo.domain.Person;
 
 /**
  * @author yaoqijun on 2018-03-12.
@@ -22,6 +23,11 @@ public class CommonManager {
 
     @Autowired
     private PersonDB2Mapper personDB2Mapper;
+
+    public void printPersonContent(){
+        Person person = personDB1Mapper.selectById(1L);
+        System.out.println("current person is " + person.toString());
+    }
 
     @Transactional(DB1Config.DB1_TRANSACTION)
     public void updateDiffDbCondition(){
